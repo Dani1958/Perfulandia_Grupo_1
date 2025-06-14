@@ -17,5 +17,7 @@ Con el fin de llevar un registro de nuestro avance como equipo, utilizamos el mo
 Ejemplo: 
 ![image](https://github.com/user-attachments/assets/408216b6-7a35-4277-ac6a-6b4093aa35d4)
 
-Para testear la funcionalidad de los requerimientos, haremos una serie de APIs en Visual Studio Code, en donde implementaremos métodos que nos ayudarán con cada uno de los puntos -del 1 al 6-. Una vez terminado los métodos, pondremos a prueba nuestro código en Postman; a continuación mostraremos ejemplos de los métodos creados, y su testeado correspondiente:
+Para testear la funcionalidad de los requerimientos, haremos una serie de APIs en Visual Studio Code, en donde implementaremos métodos que nos ayudarán con cada uno de los puntos -del 1 al 6-. Éstos métodos los haremos utilizando el patrón de servicio MVC con servicio adicional, que seria MVCS (Modelo, Vista, Servicio y Controlador), en donde el modelo representa los datos de la aplicación, controlador gestiona las solicitudes, el servicio encapsula la lógica de negocio y el repositorio se encarga del acceso a los datos. Éste modelo nos ayuda a organizar de mejor forma nuestro código, lo que facilita el mantenimiento de nuestra API y facilita las pruebas unitarias.
+
+Una vez terminado los métodos, pondremos a prueba nuestro código en Postman; a continuación mostraremos ejemplos de los métodos creados, y su testeado correspondiente:
 -Aquí hay que poner ejemplos-
