@@ -15,7 +15,7 @@ Ejemplo:
 Con el fin de llevar un registro de nuestro avance como equipo, utilizamos el modelo de carta Gantt, el cuál lo pueden encontrar en: 
 [Carta Gantt](https://docs.google.com/spreadsheets/d/1T88xv_SvmG8MqBjmDm0QIB9hgcdLkPwPyVFqAx14S-c/edit?usp=sharing)
 Ejemplo: 
-![image](https://github.com/user-attachments/assets/499bfeda-a248-4e80-98dc-f45a7a9cca99)
+![image](https://github.com/user-attachments/assets/408216b6-7a35-4277-ac6a-6b4093aa35d4)
 
 Para testear la funcionalidad de los requerimientos, haremos una serie de APIs en Visual Studio Code, en donde implementaremos métodos que nos ayudarán con cada uno de los puntos -del 1 al 6-. Una vez terminado los métodos, pondremos a prueba nuestro código en Postman; a continuación mostraremos ejemplos de los métodos creados, y su testeado correspondiente:
 -Aquí hay que poner ejemplos-
