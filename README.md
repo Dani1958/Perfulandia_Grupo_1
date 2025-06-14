@@ -1,5 +1,5 @@
 # Perfulandia_Grupo_1
-El objetivo de nuestro equipo es actualizar el sistema monolitico de la empresa Perfulandia, a un sistema con microservicios. En esta etapa de nuestro proyecto, estamso enfocados en 6 requerimientos:
+    #Requerimientos
   1. Buscar perfume por el nombre
   2. Mostrar perfumes disponibles
   3. Mostrar categoría 'mujer'
@@ -7,17 +7,18 @@ El objetivo de nuestro equipo es actualizar el sistema monolitico de la empresa 
   5. Ingresar un nuevo perfume al sistema
   6. Eliminar un perfume
 
-Para poner a prueba estos requerimientos, creamos casos de prueba, los cualés puende verse con mayor detalle en:
-[Casos de Prueba](https://docs.google.com/spreadsheets/d/1pFc_NshsX3FozzPNAIGjGRa81tJIBs7GJu-JoMw7p_0/edit?usp=sharing)
+Creamos casos de prueba, los cualés puende verse con mayor detalle en: [Casos de Prueba](https://docs.google.com/spreadsheets/d/1pFc_NshsX3FozzPNAIGjGRa81tJIBs7GJu-JoMw7p_0/edit?usp=sharing)
 Ejemplo: 
-![image](https://github.com/user-attachments/assets/f3b4e0b0-918c-48ec-9881-00fc942ba104)
+  ![image](https://github.com/user-attachments/assets/f3b4e0b0-918c-48ec-9881-00fc942ba104)
 
-Con el fin de llevar un registro de nuestro avance como equipo, utilizamos el modelo de carta Gantt, el cuál lo pueden encontrar en: 
-[Carta Gantt](https://docs.google.com/spreadsheets/d/1T88xv_SvmG8MqBjmDm0QIB9hgcdLkPwPyVFqAx14S-c/edit?usp=sharing)
+Usamos Carta Gantt para llevar un registro de nuestro avance:  [Carta Gantt](https://docs.google.com/spreadsheets/d/1T88xv_SvmG8MqBjmDm0QIB9hgcdLkPwPyVFqAx14S-c/edit?usp=sharing)
 Ejemplo: 
-![image](https://github.com/user-attachments/assets/408216b6-7a35-4277-ac6a-6b4093aa35d4)
+  ![image](https://github.com/user-attachments/assets/408216b6-7a35-4277-ac6a-6b4093aa35d4)
 
-Para testear la funcionalidad de los requerimientos, haremos una serie de APIs en Visual Studio Code, en donde implementaremos métodos que nos ayudarán con cada uno de los puntos -del 1 al 6-. Éstos métodos los haremos utilizando el patrón de servicio MVC con servicio adicional, que seria MVCS (Modelo, Vista, Servicio y Controlador), en donde el modelo representa los datos de la aplicación, controlador gestiona las solicitudes, el servicio encapsula la lógica de negocio y el repositorio se encarga del acceso a los datos. Éste modelo nos ayuda a organizar de mejor forma nuestro código, lo que facilita el mantenimiento de nuestra API y facilita las pruebas unitarias.
+Los requerimientos los haremos utilizando el patrón de servicio MVC con servicio adicional, que seria MVCS (Modelo, Vista, Servicio y Controlador).
+Paso 1: usar [Spring Boot Initializr](https://start.spring.io/) y agregar dependencias.
+Paso 2: usar [Visual Studio Code](https://code.visualstudio.com/download) para implmentar el módelo MVCS.
 
-Una vez terminado los métodos, pondremos a prueba nuestro código en Postman; a continuación mostraremos ejemplos de los métodos creados, y su testeado correspondiente:
--Aquí hay que poner ejemplos-
+Una vez terminado los métodos, haremos pruebas unitarias en Postman, el cual puedes descargar [Aquí](https://www.postman.com/downloads/)
+
+
