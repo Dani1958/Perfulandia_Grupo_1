@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.perfulandia.model.Perfume;
 import com.perfulandia.repository.PerfumeRepository;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class PerfumeService {
 
@@ -23,14 +25,30 @@ public class PerfumeService {
          return perfume;
     }
 
-    //Buscar perfume por id
-    public Optional<Perfume> obtenerPorId(Long id) {
-        return perfumeRepository.findById(id);
+    //Buscar perfume por disponibilidad
+    public List<Perfume> obtenerPorDisponibilidad(Boolean disponible) {
+        if (disponible != true || disponible != false) {
+            throw new IllegalArgumentException("Solo puede ser disponible (true) o no disponible (false)");
+        }
+
+        List<Perfume> perfume = perfumeRepository.findByDisponible(disponible);
+
+        if (perfume.isEmpty()) {
+            throw new IllegalArgumentException("No existen perfumes " + disponible);
+        }
+
+        return perfume;
     }
 
     //Listar todos los perfumes
     public List<Perfume> listarTodos() {
-        return perfumeRepository.findAll();
+        List<Perfume> perfume = perfumeRepository.findAll();
+
+        if (perfume.isEmpty()) {
+            throw new IllegalArgumentException("No hay perfumes registrados.");
+        }
+
+        return perfume;
     }
 
     //Buscar perfume por categoria
@@ -62,6 +80,8 @@ public class PerfumeService {
             throw new IllegalArgumentException("La categoría debe ser 'Mujer' o 'Hombre'");
         }
         
+        perfume.setDisponible(perfume.getStock() != null && perfume.getStock() > 0);
+
         return perfumeRepository.save(perfume);
     }
 
@@ -81,6 +101,7 @@ public class PerfumeService {
         }
 
         perfume.setId(id);
+        perfume.setDisponible(perfume.getStock() != null && perfume.getStock() > 0);
         return perfumeRepository.save(perfume);
     }
 
