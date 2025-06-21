@@ -16,5 +16,5 @@ public interface PerfumeRepository extends JpaRepository<Perfume, Long>{
 
     List<Perfume> findByCategoria(String categoria);
 
-    List<Perfume> findByDisponible(Boolean disponible);
+    List<Perfume> findByDisponible(String disponible);
 }

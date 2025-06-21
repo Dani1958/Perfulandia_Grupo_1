@@ -21,9 +21,15 @@ public class Perfume {
     private Integer stock;
 
     @Column(nullable = false, length = 100)
+    private String marca;
+
+    @Column(nullable = false, length = 100)
     private String categoria;
 
     @Column(nullable = false)
-    private Boolean disponible; 
+    private Integer precio;
+
+    @Column(nullable = false)
+    private String disponible; 
 
 }

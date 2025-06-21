@@ -41,7 +41,7 @@ public class PerfumeController {
 
     //Buscar perfume por disponibilidad
     @GetMapping("/disponibilidad/{disponible}")
-    public ResponseEntity<?> obtenerPorDisponibilidad(@RequestParam Boolean disponible) {
+    public ResponseEntity<?> obtenerPorDisponibilidad(@RequestParam String disponible) {
         try {
             List<Perfume> perfume = perfumeService.obtenerPorDisponibilidad(disponible);
             return ResponseEntity.ok(perfume);
@@ -76,8 +76,8 @@ public class PerfumeController {
     @PostMapping
     public ResponseEntity<?> guardar(@RequestBody Perfume perfume) {
         try {
-            Perfume nuevoPerfume = perfumeService.guardar(perfume);
-            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPerfume);
+            perfumeService.guardar(perfume);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Perfume agregado correctamente");
         } catch(IllegalArgumentException except) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(except.getMessage());
         }
@@ -87,8 +87,8 @@ public class PerfumeController {
     @PutMapping("/id/{id}")
     public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Perfume perfume) {
         try {
-            Perfume actualizarPerfume = perfumeService.actualizar(id, perfume);
-            return ResponseEntity.ok(actualizarPerfume);
+            perfumeService.actualizar(id, perfume);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Perfume actualizado correctamente");
         } catch(IllegalArgumentException except) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(except.getMessage());
         }
@@ -99,7 +99,7 @@ public class PerfumeController {
     public ResponseEntity<?> eliminar(@PathVariable Long id) {
         try {
             perfumeService.eliminar(id);
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.ok("Perfume eliminado correctamente");
         } catch (IllegalArgumentException except) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(except.getMessage());
         }
