@@ -1,7 +1,6 @@
 package com.perfulandia.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.perfulandia.model.Perfume;
 import com.perfulandia.service.PerfumeService;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/api/perfumes")
@@ -37,16 +38,26 @@ public class PerfumeController {
         }
     }
 
-    //Buscar perfume por id
-    @GetMapping("/id/{id}")
-    public Optional<Perfume> obtenerPorId(@RequestParam Long id) {
-        return perfumeService.obtenerPorId(id);
+    //Buscar perfume por disponibilidad
+    @GetMapping("/disponibilidad/{disponible}")
+    public ResponseEntity<?> obtenerPorDisponibilidad(@RequestParam Boolean disponible) {
+        try {
+            List<Perfume> perfume = perfumeService.obtenerPorDisponibilidad(disponible);
+            return ResponseEntity.ok(perfume);
+        } catch (IllegalArgumentException except) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(except.getMessage());
+        }
     }
 
     //Listar todos los perfumes
     @GetMapping
-    public List<Perfume> listarTodos() {
-        return perfumeService.listarTodos();
+    public ResponseEntity<?> listarTodos() {
+        try {
+            List<Perfume> perfume = perfumeService.listarTodos();
+            return ResponseEntity.ok(perfume);
+        } catch (EntityNotFoundException except) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(except.getMessage());
+        }
     }
 
     //Buscar perfume por categoria
