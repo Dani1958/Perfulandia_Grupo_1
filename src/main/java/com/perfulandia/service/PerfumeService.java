@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.perfulandia.model.Perfume;
 import com.perfulandia.repository.PerfumeRepository;
 
-import jakarta.persistence.EntityNotFoundException;
-
 @Service
 public class PerfumeService {
 
