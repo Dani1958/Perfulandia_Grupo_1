@@ -11,7 +11,7 @@ import com.perfulandia.model.Perfume;
 public interface PerfumeRepository extends JpaRepository<Perfume, Long>{
 
     //findByNombreContainingIgnoreCase con este nombre ignora las mayúsculas y minúsculas
-    //Segun yo no es necesario cambiarlo porque en el service ocupo equalsIgnoreCase que hace lo mismo
+    //Segun yo no es necesario cambiarlo porque en el service ocupo equalsIgnoreCase que hace lo mismo (willi)
     List<Perfume> findByNombre(String nombre);
 
     List<Perfume> findByCategoria(String categoria);

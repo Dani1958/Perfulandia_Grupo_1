@@ -11,7 +11,6 @@ import lombok.*;
 public class Perfume {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(unique = true, nullable = false, length = 100)
