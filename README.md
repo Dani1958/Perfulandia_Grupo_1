@@ -1,7 +1,7 @@
 # Perfulandia_Grupo_1
-Empresa de perfumes para hombres y mujeres ✨
+Empresa vendedora de perfumes para hombres y mujeres ✨
 
-  #Empezamos por...👩🏻‍💻🥇👨🏻‍💻
+# ¿Cómo iniciamos?...👩🏻‍💻🥇👨🏻‍💻
 1. Crear casos de prueba, los cuales pueden verse con mayor detalle en: [Casos de Prueba](https://docs.google.com/spreadsheets/d/14TDQm57UXrLNfO6yh2W4BZ1GGhcZ_xp6S-X-IP6Si2U/edit?gid=681915443#gid=681915443)
 2. Usamos Carta Gantt para llevar un registro de nuestro avance:  [Carta Gantt](https://docs.google.com/spreadsheets/d/1T88xv_SvmG8MqBjmDm0QIB9hgcdLkPwPyVFqAx14S-c/edit?usp=sharing)
 
@@ -13,7 +13,7 @@ Nuestro backend lo haremos en base a el patrón de servicio MVC con servicio adi
 
 Una vez terminado los métodos, haremos pruebas unitarias en Postman, el cual puedes descargar [Aquí](https://www.postman.com/downloads/)
 
-  #Comienza el juego 🎮🕹️🥇
+# Comencemos!!
 
 
 
