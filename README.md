@@ -7,7 +7,7 @@ Empresa vendedora de perfumes para hombres y mujeres ✨
 
 Nuestro backend lo haremos en base a el patrón de servicio MVC con servicio adicional, que seria MVCS (Modelo, Vista, Servicio y Controlador).
 1. Usar [Spring Boot Initializr](https://start.spring.io/) y agregar dependencias.
-2. Usar [Visual Studio Code](https://code.visualstudio.com/download) para implmentar el módelo MVCS.
+2. Usar [Visual Studio Code](https://code.visualstudio.com/download) para implementar el módelo MVCS.
 3. Ingresar a [GitHub](https://github.com/login)
 4. Crear un repositorio, para poder trabajar con el equipo.
 
@@ -23,24 +23,35 @@ Todo se realiza mediante una API REST construida con Spring Boot
 
 Tecnologías principales
 
-1. Spring Boot: para generar y ejecutar el proyecto (Java 17).
-2. Visual Studio Code: para editar y desarrollar el código.
-3. GitHub: para almacenar y gestionar el repositorio del equipo.
-4. Postman: para probar y verificar el funcionamiento de las funciones de la API.
+1. Spring Boot
+2. Visual Studio Code
+3. GitHub
+4. Postman
 
 Estructura del proyecto
 
 src/
+
 └── main/
+
 └── java/com/perfulandia/
+
 ├── controller/
+
 │ └── PerfumeController.java
+
 ├── model/
+
 │ └── Perfume.java
+
 ├── repository/
+
 │ └── PerfumeRepository.java
+
 ├── service/
+
 │ └── PerfumeService.java
+
 └── PerfulandiaApplication.java
 
 ¿Cómo ejecutar?
