@@ -56,7 +56,7 @@ src/
 
 ¿Cómo ejecutar?
 
-1. Clona el repositorio
-2. Abre el proyecto en Visual Studio Code
+1. Clona el repositorio -> Puedes hacerlo desde la interfaz web o en la terminal de VSC con el comando "git clone + url repositorio" en "git bash" o en "poweshell".
+2. Abre el proyecto en Visual Studio Code -> al abrir VSC verás la opción "open folder" y seleccionar la carpeta.
 3. Instala las extensiones necesarias (Extension pack for Java)
-4. Ejecuta el proyecto con el comando "mvn spring-boot:run"
+4. Ejecuta el proyecto con el comando "mvn spring-boot:run" en la terminal "command prompt".
