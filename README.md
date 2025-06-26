@@ -15,5 +15,37 @@ Una vez terminado los métodos, haremos pruebas unitarias en Postman, el cual pu
 
 # Comencemos!!
 
+¿Cómo funciona?
 
+El sistema permite gestionar perfumes: crearlos, actualizarlos, eliminarlos y listarlos.
+Puedes buscar perfumes por nombre, disponibilidad o categoría.
+Todo se realiza mediante una API REST construida con Spring Boot
 
+Tecnologías principales
+
+1. Spring Boot: para generar y ejecutar el proyecto (Java 17).
+2. Visual Studio Code: para editar y desarrollar el código.
+3. GitHub: para almacenar y gestionar el repositorio del equipo.
+4. Postman: para probar y verificar el funcionamiento de las funciones de la API.
+
+Estructura del proyecto
+
+src/
+└── main/
+└── java/com/perfulandia/
+├── controller/
+│ └── PerfumeController.java
+├── model/
+│ └── Perfume.java
+├── repository/
+│ └── PerfumeRepository.java
+├── service/
+│ └── PerfumeService.java
+└── PerfulandiaApplication.java
+
+¿Cómo ejecutar?
+
+1. Clona el repositorio
+2. Abre el proyecto en Visual Studio Code
+3. Instala las extensiones necesarias (Extension pack for Java)
+4. Ejecuta el proyecto con el comando "mvn spring-boot:run"
