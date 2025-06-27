@@ -15,7 +15,8 @@ public class PerfumeService {
 
     //Buscar perfume por nombre
     public List<Perfume> obtenerPorNombre(String nombre) {
-        List<Perfume> perfume = perfumeRepository.findByNombre(nombre);
+        nombre = nombre.trim();
+        List<Perfume> perfume = perfumeRepository.findByNombreContainingIgnoreCase(nombre);
 
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede estar vacío");
@@ -30,13 +31,14 @@ public class PerfumeService {
 
     //Buscar perfume por disponibilidad
     public List<Perfume> obtenerPorDisponibilidad(String disponible) {
+        disponible = disponible.trim();
         if (disponible == null || 
             !"Disponible".equalsIgnoreCase(disponible) &&
             !"No disponible".equalsIgnoreCase(disponible)) {
             throw new IllegalArgumentException("Solo puede ser disponible o no disponible");
         }
 
-        List<Perfume> perfume = perfumeRepository.findByDisponible(disponible);
+        List<Perfume> perfume = perfumeRepository.findByDisponibleIgnoreCase(disponible);
 
         if (perfume.isEmpty()) {
             throw new IllegalArgumentException("No existen perfumes " + disponible);
@@ -47,13 +49,14 @@ public class PerfumeService {
 
     //Buscar perfume por categoria
     public List<Perfume> obtenerPorCategoria(String categoria) {
+        categoria = categoria.trim();
         if (categoria == null ||
             !"Mujer".equalsIgnoreCase(categoria) && 
             !"Hombre".equalsIgnoreCase(categoria)) {
             throw new IllegalArgumentException("La categoría debe ser 'Mujer' o 'Hombre'");
         }
 
-        return perfumeRepository.findByCategoria(categoria);
+        return perfumeRepository.findByCategoriaContainingIgnoreCase(categoria);
     }
 
     //Listar todos los perfumes
@@ -71,7 +74,7 @@ public class PerfumeService {
 
     //Guardar perfume
     public Perfume guardar(Perfume perfume) {
-        boolean existsByNombre = perfumeRepository.findByNombre(perfume.getNombre())
+        boolean existsByNombre = perfumeRepository.findByNombreContainingIgnoreCase(perfume.getNombre())
             .stream()
             .anyMatch(perf -> perf.getNombre().equalsIgnoreCase(perfume.getNombre()));
 
@@ -120,7 +123,7 @@ public class PerfumeService {
             throw new IllegalArgumentException("No existe un perfume con el id " + id);
         }
         
-        boolean existsByNombre = perfumeRepository.findByNombre(perfume.getNombre())
+        boolean existsByNombre = perfumeRepository.findByNombreContainingIgnoreCase(perfume.getNombre())
             .stream()
             .anyMatch(perf -> !perf.getId().equals(id) && perf.getNombre().equalsIgnoreCase(perfume.getNombre()));
 
