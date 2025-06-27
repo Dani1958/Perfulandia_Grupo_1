@@ -17,7 +17,7 @@ public class Perfume {
     @Column(unique = true, nullable = false, length = 100)
     private String nombre;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private Integer stock;
 
     @Column(nullable = false, length = 100)

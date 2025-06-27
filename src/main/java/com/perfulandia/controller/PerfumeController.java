@@ -1,7 +1,6 @@
 package com.perfulandia.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.perfulandia.model.Perfume;
@@ -30,7 +28,7 @@ public class PerfumeController {
 
     //Buscar perfume por nombre
     @GetMapping("/nombre/{nombre}")
-    public ResponseEntity<?> obtenerPorNombre(@RequestParam String nombre) {
+    public ResponseEntity<?> obtenerPorNombre(@PathVariable String nombre) {
         try {
             List<Perfume> perfume = perfumeService.obtenerPorNombre(nombre);
             return ResponseEntity.ok(perfume);
@@ -41,7 +39,7 @@ public class PerfumeController {
 
     //Buscar perfume por disponibilidad
     @GetMapping("/disponibilidad/{disponible}")
-    public ResponseEntity<?> obtenerPorDisponibilidad(@RequestParam String disponible) {
+    public ResponseEntity<?> obtenerPorDisponibilidad(@PathVariable String disponible) {
         try {
             List<Perfume> perfume = perfumeService.obtenerPorDisponibilidad(disponible);
             return ResponseEntity.ok(perfume);
@@ -88,7 +86,7 @@ public class PerfumeController {
     public ResponseEntity<?> actualizar(@PathVariable Long id, @RequestBody Perfume perfume) {
         try {
             perfumeService.actualizar(id, perfume);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Perfume actualizado correctamente");
+            return ResponseEntity.ok("Perfume actualizado correctamente");
         } catch(IllegalArgumentException except) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(except.getMessage());
         }
